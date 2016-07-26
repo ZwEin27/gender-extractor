@@ -2,13 +2,15 @@
 # @Author: ZwEin
 # @Date:   2016-07-21 09:45:34
 # @Last Modified by:   ZwEin
-# @Last Modified time: 2016-07-21 10:47:25
+# @Last Modified time: 2016-07-26 11:06:17
 
 import re
 
 ######################################################################
 #   Constant
 ######################################################################
+
+GE_NAME = 'gender extractor'
 
 GE_GENDER_NAME_TRANSGENDER = 'transgender'
 GE_GENDER_NAME_MALE = 'male'
@@ -68,7 +70,8 @@ class DIGGE(object):
                 pap.setdefault(GE_GENDER_NAME_FEMALE, 0)
                 pap[GE_GENDER_NAME_FEMALE] += 1
             else:
-                raise Exception('never happen')
+                continue
+                raise Exception(GE_NAME, 'never happen')
 
         # level judement
         
